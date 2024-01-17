@@ -65,4 +65,4 @@ Make sure that javascript is enabled.
 
 ## Note
 
-You can see a live demo of the app [here](https://google.com).
+You can see a live demo of the app [here](https://inquisitive-belekoy-1d8bed.netlify.app/).
