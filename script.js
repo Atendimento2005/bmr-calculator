@@ -6,6 +6,8 @@ window.addEventListener("load", () => {
   const weightUnit = document.querySelector('#weight-unit')
   const formula = document.querySelector('#formula');
   const bodyFat = document.querySelector('#body-fat');
+  const age = document.querySelector('#age');
+  const bmrDisplay = document.querySelector('#bmr-display');
   
   
   formula.addEventListener('change', () => {
@@ -43,6 +45,8 @@ window.addEventListener("load", () => {
       validCount+=1
     }
 
+    console.log(height.value)
+
     if(!weight.value){
       weight.setCustomValidity("Please enter your weight")
     } else {
@@ -57,11 +61,29 @@ window.addEventListener("load", () => {
       validCount+=1
     }
 
-    if (validCount == 3) {
-      document.querySelector("#results").classList.remove('hidden')
+    if(!age.value){
+      age.setCustomValidity("Please enter your age")
+    } else {
+      age.setCustomValidity("")
+      validCount += 1
     }
 
-    console.log("OK")
+    if (validCount == 4) {
+     
+      let bmr;
+
+      // TODO Get value of gender and complete this
+      if(formula.value = 'mifflin-st') {
+        bmr = 10*weight.value + 6.25*height.value - 5*age.value + 5
+        
+      } else if (formula.value = 'harris-benedict') {
+        bmr = 1000
+      }
+
+      bmrDisplay.innerText = bmr
+
+      document.querySelector("#results").classList.remove('hidden')
+    }
 
   })
 })

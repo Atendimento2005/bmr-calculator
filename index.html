@@ -10,17 +10,33 @@
 </head>
 <body class="select-none flex flex-col justify-start items-center">
 	<div class="bg-neutral-900 w-screen h-screen fixed -z-10"></div>
-	<div id="main-container" class="w-screen max-w-screen-md">
+	<div id="main-container" class="w-screen max-w-screen-md ">
 		<nav class="flex flex-col p-3 md:py-10">
 			<h1 class="font-bold text-neutral-200 text-4xl md:text-6xl">BMR Calculator</h1>
 			<a href="https://github.com/Atendimento2005/bmr-calculator" class="text-neutral-400 text-sm font-mono md:text-lg">view source</a>
 		</nav>
-		<div class="flex flex-col justify-start items-center md:flex-row md:justify-around">
-			<div>
+		<div class="flex flex-col justify-start items-center md:grid md:grid-cols-2 md:grid-rows-3 md:justify-center md:items-center">
+			
+			<div class="grid grid-rows-1 grid-cols-2 justify-between items-center w-72 md:row-span-1 md:col-span-2 md:row-start-1 md:w-full">
+				<div class="py-2 md:py-5">
+					<h2 class="text-lg md:text-2xl text-neutral-200 font-semibold mb-1">Gender</h2>
+					<input checked type="radio" name="gender" id="male" value="male" class="h-4 w-8">
+					<label for="male" class="text-neutral-200 font-medium md:text-2xl md:leading-8">Male</label>
+					<input type="radio" name="gender" id="female" value="female" class="ml-2 md:ml-7 h-4 w-8">
+					<label for="female" class="text-neutral-200 font-medium md:text-2xl md:leading-8">Female</label>
+				</div>
+	
+				<div class="py-2 md:py-5 justify-self-end md:justify-self-start">
+					<h2 class="text-lg md:text-2xl text-neutral-200 font-semibold">Age</h2>
+					<input id="age" type="number" value="18" placeholder="Your age" class="rounded-md mt-1 md:h-10 md:text-lg bg-neutral-100 h-7 w-32 md:w-80 pl-2 placeholder:text-neutral-500 invalid:border-red-500 invalid:border-solid invalid:border-2 transition-all">
+				</div>
+			</div>
+
+			<div class="md:row-span-2 md:col-span-1 md:row-start-2 md:col-start-1">
 				<div class="py-2 md:py-5">
 						<h2 class="text-lg md:text-2xl text-neutral-200 font-semibold">Height</h2>
 						<div class="flex flex-row justify-between items-center mt-1 w-72 md:w-80">
-							<input id="height" type="number" placeholder="Your height" class="rounded-md md:h-10 md:text-lg bg-neutral-100 h-7 w-[14.5rem] md:w-64 pl-2 placeholder:text-neutral-500 invalid:border-red-500 invalid:border-solid invalid:border-2 transition-all">
+							<input id="height" type="number" value="150" placeholder="Your height" class="rounded-md md:h-10 md:text-lg bg-neutral-100 h-7 w-[14.5rem] md:w-64 pl-2 placeholder:text-neutral-500 invalid:border-red-500 invalid:border-solid invalid:border-2 transition-all">
 							<select id="height-unit" class="h-7 ml-2 pl-1 md:text-xl md:h-10 w-16 rounded bg-neutral-100">
 								<option value="cm" class="text-neutral-800">cm</option>
 								<option value="in" class="text-neutral-800">in</option>
@@ -30,7 +46,7 @@
 				<div class="py-2 md:py-5">
 					<h2 class="text-lg md:text-2xl text-neutral-200 font-semibold">Weight</h2>
 					<div class="flex flex-row justify-between items-center mt-1 w-72 md:w-80">
-						<input id="weight" type="number" placeholder="Your weight" class="rounded-md md:h-10 md:text-lg bg-neutral-100 h-7 w-[14.5rem] md:w-64 placeholder:text-neutral-500 pl-2 invalid:border-red-500 invalid:border-solid invalid:border-2 transition-all">
+						<input id="weight" type="number" value="70" placeholder="Your weight" class="rounded-md md:h-10 md:text-lg bg-neutral-100 h-7 w-[14.5rem] md:w-64 placeholder:text-neutral-500 pl-2 invalid:border-red-500 invalid:border-solid invalid:border-2 transition-all">
 						<select id="weight-unit" class="h-7 ml-2 pl-1 md:text-xl md:h-10 w-16 rounded bg-neutral-100">
 							<option value="kg">kg</option>
 							<option value="lb">lb</option>
@@ -38,7 +54,7 @@
 					</div>
 				</div>
 			</div>
-			<div>
+			<div class="md:row-span-2 md:col-span-1 md:row-start-2 md:col-start-2">
 				<div class="py-2 md:py-5">
 					<h2 class="text-lg md:text-2xl text-neutral-200 font-semibold">Estimation formula</h2>
 					<select id="formula" name="formula" class="rounded-md md:h-10 md:text-lg bg-neutral-100 mt-1 pl-1 h-7 w-72 md:w-80 placeholder:text-neutral-500 placeholder:pl-2">
